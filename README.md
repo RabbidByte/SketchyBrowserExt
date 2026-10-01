@@ -23,7 +23,7 @@ A list of **7,569 browser extension IDs**, with a name for most of them, that I 
 - **Do your own research.** Verify an extension yourself before you rely on this list to remove, block or report it, or to make any security, business or legal decision. Don't treat the list as a substitute for professional security advice.
 - **No warranty and no liability.** The list is provided "as is", with no warranty of any kind, express or implied, including accuracy, completeness or fitness for a particular purpose. To the fullest extent permitted by law, I accept no liability for any loss or damage arising from its use or from reliance on it.
 - **Names and trademarks.** Extension names are used only to identify the listed IDs. They belong to their respective owners. I have no affiliation with, and no endorsement from, any of them.
-- **Corrections and removals.** If you own or develop a listed extension and believe it shouldn't be here, or the information is wrong, contact me at **[add contact method]** with the extension ID. I will review the request promptly and remove or correct the entry where appropriate.
+- **Corrections and removals.** If you own or develop a listed extension and believe it shouldn't be here, or the information is wrong, [open an issue](https://github.com/RabbidByte/SketchyBrowserExt/issues) or submit a pull request on GitHub with the extension ID and the change you'd like. I will review the request promptly and remove or correct the entry where appropriate.
 
 ## Data format
 
