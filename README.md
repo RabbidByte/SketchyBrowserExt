@@ -1,15 +1,15 @@
 # Suspicious Browser Extensions: A Personal Watchlist
 
-A list of **7,569 browser extension IDs**, with a name for most of them, that I consider suspicious or worth a closer look. It's compiled from publicly available research and my own opinions. Use it as a starting point to review the browsers on your machines, not as a verdict on any extension or its developer.
+A list of **2,224 browser extension IDs**, with a name for most of them, that I consider suspicious or worth a closer look. It's compiled from publicly available research and my own opinions. Use it as a starting point to review the browsers on your machines, not as a verdict on any extension or its developer.
 
 > **Please read the [Disclaimer](#disclaimer) before using or sharing this list.**
 
 | | |
 |---|---|
 | **File** | [Malicious_or_Shady_BrowserExtensions.csv](Malicious_or_Shady_BrowserExtensions.csv) |
-| **Entries** | 7,569 (all unique IDs) |
-| **Names** | 7,328 entries have a name; 241 are blank |
-| **Format** | CSV, UTF-8, with four columns: `ID`, `Name`, `Browser` and `Source` |
+| **Entries** | 2,224 (all unique IDs) |
+| **Names** | 1,983 entries have a name; 241 are blank |
+| **Format** | CSV, ISO-8859-1 (Latin-1), with four columns: `ID`, `Name`, `Browser` and `Source` |
 | **ID style** | 32-character Chromium-style extension IDs (`a`–`p`) |
 | **Base list** | [The-Privacy-Commons-Institute/chrome-mal-ids](https://github.com/The-Privacy-Commons-Institute/chrome-mal-ids), plus my own additions |
 
@@ -37,9 +37,10 @@ aljmdjbcbkanlhnmcdjbefaomgbekhno,Color by Number,Edge,https://microsoftedge.gith
 - The file has a header row, so skip the first line when parsing.
 - `Name` is the extension's display name and may be empty. Names that contain commas are quoted, so use a real CSV parser for the `Name` column. The `ID` column always comes first and never contains commas.
 - `Browser` is the browser the extension targets: `Chrome`, `Edge`, or `"Chrome, Edge"` when the same ID targets both. The column also allows `Firefox`, but no entry uses it yet.
-- `Source` is the URL where the entry was reported, as recorded in the base list's `SOURCE` field. Entries with no recorded source point to the base list itself. Many entries come from the [malicious_extension_sentry](https://github.com/toborrm9/malicious_extension_sentry) feed, which monitors store removals and security blogs, so a source there may be an aggregator and not the original research.
-- Names aren't unique. Several different IDs are called "Search Manager", for example, so always match on `ID`.
+- `Source` is the URL where the entry was reported. Every entry has one. A source may be an aggregator or a security blog and not the original research.
+- Names aren't unique. Some different IDs share a name, "Search Manager" for example, so always match on `ID`.
 - Line endings are CRLF. Strip `\r` when using it with Unix tools.
+- The file is not UTF-8. Open it as ISO-8859-1 (Latin-1), or a non-ASCII byte in a name will make a strict UTF-8 parser fail.
 - Every ID is a valid Chromium-style extension ID, so it works for Chrome, Edge, Brave, Opera, Vivaldi and other Chromium browsers. Edge entries use IDs from the Edge Add-ons store and may differ from the Chrome Web Store.
 
 ## Usage
@@ -70,7 +71,7 @@ To print the names of any matches:
 import csv
 
 hits = set(open('/tmp/installed.txt').read().split()) & set(open('/tmp/bad.txt').read().split())
-with open('Malicious_or_Shady_BrowserExtensions.csv', encoding='utf-8', newline='') as f:
+with open('Malicious_or_Shady_BrowserExtensions.csv', encoding='iso-8859-1', newline='') as f:
     for row in csv.DictReader(f):
         if row['ID'] in hits:
             print(row['ID'], row['Name'] or '(no name)', row['Browser'], row['Source'])
