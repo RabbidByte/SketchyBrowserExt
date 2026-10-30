@@ -7,6 +7,7 @@ A list of **2,478 browser extension IDs**, with a name for most of them, that I 
 | | |
 |---|---|
 | **File** | [Malicious_or_Shady_BrowserExtensions.csv](Malicious_or_Shady_BrowserExtensions.csv) |
+| **UTF-8 copy** | [Malicious_or_Shady_BrowserExtensions_UTF8.csv](Malicious_or_Shady_BrowserExtensions_UTF8.csv): the same data, valid UTF-8 throughout |
 | **Entries** | 2,478 (all unique IDs) |
 | **Names** | 2,237 entries have a name; 241 are blank |
 | **Format** | CSV, ISO-8859-1 (Latin-1), with four columns: `ID`, `Name`, `Browser` and `Source` |
@@ -41,6 +42,7 @@ aljmdjbcbkanlhnmcdjbefaomgbekhno,Color by Number,Edge,https://microsoftedge.gith
 - Names aren't unique. Some different IDs share a name, "Search Manager" for example, so always match on `ID`.
 - Line endings are CRLF. Strip `\r` when using it with Unix tools.
 - The file is not UTF-8. Open it as ISO-8859-1 (Latin-1), or a non-ASCII byte in a name will make a strict UTF-8 parser fail.
+- If you need UTF-8, use [Malicious_or_Shady_BrowserExtensions_UTF8.csv](Malicious_or_Shady_BrowserExtensions_UTF8.csv). It has the same rows, columns and CRLF line endings, but every name is valid UTF-8, so open it with `encoding='utf-8'`.
 - Every ID is a valid Chromium-style extension ID, so it works for Chrome, Edge, Brave, Opera, Vivaldi and other Chromium browsers. Edge entries use IDs from the Edge Add-ons store and may differ from the Chrome Web Store.
 
 ## Usage
