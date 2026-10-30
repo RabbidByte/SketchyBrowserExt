@@ -1,14 +1,14 @@
 # Suspicious Browser Extensions: A Personal Watchlist
 
-A list of **2,224 browser extension IDs**, with a name for most of them, that I consider suspicious or worth a closer look. It's compiled from publicly available research and my own opinions. Use it as a starting point to review the browsers on your machines, not as a verdict on any extension or its developer.
+A list of **2,478 browser extension IDs**, with a name for most of them, that I consider suspicious or worth a closer look. It's compiled from publicly available research and my own opinions. Use it as a starting point to review the browsers on your machines, not as a verdict on any extension or its developer.
 
 > **Please read the [Disclaimer](#disclaimer) before using or sharing this list.**
 
 | | |
 |---|---|
 | **File** | [Malicious_or_Shady_BrowserExtensions.csv](Malicious_or_Shady_BrowserExtensions.csv) |
-| **Entries** | 2,224 (all unique IDs) |
-| **Names** | 1,983 entries have a name; 241 are blank |
+| **Entries** | 2,478 (all unique IDs) |
+| **Names** | 2,237 entries have a name; 241 are blank |
 | **Format** | CSV, ISO-8859-1 (Latin-1), with four columns: `ID`, `Name`, `Browser` and `Source` |
 | **ID style** | 32-character Chromium-style extension IDs (`a`–`p`) |
 | **Base list** | [The-Privacy-Commons-Institute/chrome-mal-ids](https://github.com/The-Privacy-Commons-Institute/chrome-mal-ids), plus my own additions |
